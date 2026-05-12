@@ -18,7 +18,7 @@ router.get('/', async (req, res) => {
       filters.tools = tool;
     }
 
-    const projects = await Project.find(filters).sort({ name: 1 });
+    const projects = await Project.find(filters).sort({ createdAt: -1 });
 
     res.json(projects);
   } catch (error) {
